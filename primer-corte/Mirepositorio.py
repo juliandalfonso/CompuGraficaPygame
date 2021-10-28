@@ -17,6 +17,19 @@ BLUE = [158,231,245]
 GREEN = [180,249,165]
 YELLOW = [255,241,166]
 
+def aOrigen(punto,punto_fijdef aOrigen(punto,punto_fijo):
+    X=punto[0]-punto_fijo[0]
+    Y=punto[1]-punto_fijo[1]
+
+    return [X,Y]
+
+def Escalar(el_punto,el_aumento):
+    X=el_punto[0]*el_aumento[0]
+    Y=el_punto[1]*el_aumento[1]
+    return[X,Y]o):
+    X=punto[0]-punto_fijo[0]
+    Y=punto[1]-punto_fijo[1]
+
 #Dibujar un vector
 def Vector(pantalla,Color,PosInicial,PosFinal):
     pygame.draw.line(pantalla,Color,PosInicial,PosFinal)
@@ -49,8 +62,8 @@ def PantallaACartesianoCentro(Coordenadas,Centro):
 
 #Funcion que convierte coordenadas cartesianas a pantalla
 def CartesianoApantalla(Coordenadas):
-    x = Coordenadas[0] + int((AnchoPantalla/2))
-    y = -Coordenadas[1] + int((AltoPantalla/2))
+    x = Coordenadas[0] + int((ANCHOPANTALLA/2))
+    y = -Coordenadas[1] + int((ALTOPANTALLA/2))
     return [x,y]
 
 #Funcion que convierte coordenadas cartesianas a pantalla enviandole el centro
@@ -82,7 +95,7 @@ def Rotacion_AntiHoraria(punto, angulo):
 def Polares_a_Cartesiano(r, t):
     x=int(r*math.cos(math.radians(t)))
     y=int(r*math.sin(math.radians(t)))
-    return x,y
+    return [x,y]
 
 #Conversion de Coordenadas Cartesianas a Polares
 def Cartesiano_a_Polares(x, y):
@@ -112,16 +125,17 @@ events = [
 
 '''
 import pygame
-from Mirepositorio import *
+from Repo import *
 
 
 if __name__ == '__main__':
     pygame.init()
     reloj=pygame.time.Clock()
-    Pantalla=pygame.display.set_mode([AnchoPantalla,AltoPantalla])
+    Pantalla=pygame.display.set_mode([ANCHOPANTALLA,ALTOPANTALLA])
 
     #Codigo
 
+    reloj = pygame.time.Clock()
     pygame.display.flip()
     fin = False
     while not fin:

@@ -2,8 +2,8 @@ import pygame
 import math
 
 #VARIABLES GLOBALES
-ANCHOPANTALLA=600
-ALTOPANTALLA=400
+AnchoPantalla=600
+AltoPantalla=400
 NEGRO = [0,0,0]
 BLANCO = [255,255,255]
 ROJO = [255,0,0]
@@ -27,13 +27,13 @@ def Circulo(pantalla,Color,Pos,Radio):
 
 #Dibujar un plano cartesiano en el centro
 def plano_cartesiano(pantalla,Color):
-    pygame.draw.line(pantalla,Color,[ANCHOPANTALLA/2,0],[ANCHOPANTALLA/2,ALTOPANTALLA])
-    pygame.draw.line(pantalla,Color,[0,ALTOPANTALLA/2],[ANCHOPANTALLA,ALTOPANTALLA/2])
+    pygame.draw.line(pantalla,Color,[AnchoPantalla/2,0],[AnchoPantalla/2,AltoPantalla])
+    pygame.draw.line(pantalla,Color,[0,AltoPantalla/2],[AnchoPantalla,AltoPantalla/2])
 
 #Dibujar un plano cartesiano enviandole el Centro
 def plano_cartesiano_centro(pantalla,Color,Centro):
-    pygame.draw.line(pantalla,Color,[0,Centro[1]],[ANCHOPANTALLA,Centro[1]])
-    pygame.draw.line(pantalla,Color,[Centro[0],0],[Centro[0],ALTOPANTALLA])
+    pygame.draw.line(pantalla,Color,[0,Centro[1]],[AnchoPantallaCentro[1]])
+    pygame.draw.line(pantalla,Color,[Centro[0],0],[Centro[0],AltoPantalla])
 
 #Funcion que convierte coordenadas de pantalla a cartesianas
 def PantallaACartesiano(Coordenadas):
@@ -112,13 +112,12 @@ events = [
 
 '''
 import pygame
-from Mirepositorio import *
-
+import Repo as rep
 
 if __name__ == '__main__':
     pygame.init()
     reloj=pygame.time.Clock()
-    Pantalla=pygame.display.set_mode([AnchoPantalla,AltoPantalla])
+    pantalla=pygame.display.set_mode([rep.AnchoPantalla,rep.AltoPantalla])
 
     #Codigo
 
